@@ -1,0 +1,18 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: guestbook-redis-allow-only-frontend
+spec:
+  podSelector: 
+    matchLabels:
+      app: guestbook-redis
+      tier: backend
+  ingress:
+  - from:
+    - podSelector: 
+        matchLabels:
+          app: guestbook
+          tier: frontend
+    ports: # Restricting port numbers
+    - port: 6379
+      protocol: TCP
