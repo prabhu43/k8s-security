@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: utils-restricted
+spec:
+  selector:
+    matchLabels:
+      run: utils-restricted
+  template:
+    metadata:
+      labels:
+        run: utils-restricted
+    spec:
+      containers:
+      - args:
+        - bash
+        image: arunvelsriram/utils
+        imagePullPolicy: IfNotPresent
+        name: utils
+        resources: {}
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        securityContext:
+          readOnlyRootFilesystem: true 
+          allowPrivilegeEscalation: false # means the container cannot escalate privileges
+        volumeMounts:
+        - name: sec-ctx-vol
+          mountPath: /data/demo
+      volumes:
+      - name: sec-ctx-vol
+        emptyDir: {}
+      securityContext:
+        runAsUser: 1000 # means all containers in the pod will run as user UID 1000
+        runAsGroup: 3000
+        fsGroup: 2000 # means the owner for mounted volumes and any files created in that volume will be GID 2000
+  

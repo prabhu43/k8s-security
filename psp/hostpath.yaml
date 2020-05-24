@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hostpath
+spec:
+  selector:
+    matchLabels:
+      run: hostpath
+  template:
+    metadata:
+      labels:
+        run: hostpath
+    spec:
+      containers:
+      - args:
+        - bash
+        image: arunvelsriram/utils
+        imagePullPolicy: IfNotPresent
+        name: utils
+        stdin: true
+        tty: true
+        volumeMounts:
+          - mountPath: hostpath
+            name: host-volume
+      volumes:
+        - name: host-volume
+          hostPath:
+            path: /
+
+      

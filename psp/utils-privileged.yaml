@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: utils-privileged
+  name: utils-privileged
+spec:
+  selector:
+    matchLabels:
+      run: utils-privileged
+  template:
+    metadata:
+      labels:
+        run: utils-privileged
+    spec:
+      containers:
+      - args:
+        - bash
+        image: arunvelsriram/utils
+        imagePullPolicy: IfNotPresent
+        name: utils-privileged
+        stdin: true
+        tty: true
+        volumeMounts:
+        - name: sec-ctx-vol
+          mountPath: /data/demo
+      volumes:
+      - name: sec-ctx-vol
+        emptyDir: {}
+      
