@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: utils
+  name: utils
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      run: utils
+  template:
+    metadata:
+      labels:
+        run: utils
+    spec:
+      containers:
+      - args:
+        - bash
+        image: arunvelsriram/utils
+        imagePullPolicy: Always
+        name: utils
+        resources: {}
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
