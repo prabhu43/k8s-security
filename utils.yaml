@@ -18,13 +18,6 @@ spec:
       - args:
         - bash
         image: arunvelsriram/utils
-        imagePullPolicy: Always
         name: utils
-        resources: {}
         stdin: true
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
         tty: true
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler

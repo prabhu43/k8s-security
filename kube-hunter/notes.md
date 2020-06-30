@@ -7,6 +7,7 @@
 ## Identify Security Weaknesses using kube-hunter
 
 - Install kube-hunter in our machine
+https://github.com/aquasecurity/kube-hunter#prerequisites
 
 - Run kube-hunter from outside cluster(from our machine):
 ```

@@ -6,8 +6,10 @@ kubectl create ns demo-nw-policy
 
 - Set default namespace: 
 ```
-kubens => demo-nw-policy
+kubens demo-nw-policy
 ```
+
+kubectl apply -f .
 
 - Show guestbook app and its pods
 

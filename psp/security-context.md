@@ -2,7 +2,7 @@
 
 - defines privilege and access control settings for a Pod or Container 
 
-- If a container runs as root, it can do any malicious attack to other pods and nodes
+- If a container runs as root, it can allow to download malicious softwares and do any attack on other pods and nodes
 
 ## runAsUser: 1000 or runAsNonRoot
 https://nvd.nist.gov/vuln/detail/CVE-2019-5736

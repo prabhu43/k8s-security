@@ -23,7 +23,7 @@ fallocate -l 1G 1Gbfile     # file creation in volume/node
 * readOnlyRootFilesystem: true
 Other than volume mounts, make the container filesytem readonly. 
 ```
-docker run --name docker-nginx -p 80:80 nginx
+docker run --name docker-nginx -d -p 80:80 nginx
 docker diff <containerId>   # Show the files/folders writable by conatiner
 ```
 
