@@ -1,0 +1,3 @@
+fileignoreconfig:
+- filename: secret/commands.md
+  checksum: 27f8737c2b2c737c70ba1cced3bc1c766a50f3b02534be00575e65db30f1eb22

@@ -56,7 +56,8 @@ subjects:
 hence use names like 10-privileged, 20-restricted,30-some-psp
 
 ### Read-only filesystem
-allows write only to given volume. writing to /tmp is not possible demo use docker diff to find the path needs to be RW for app to work. excluding that folder, make all others readonly
+allows write only to given volume. writing to /tmp is not possible.
+demo: use docker diff to find the path needs to be RW for app to work. excluding that folder, make all others readonly
 
 ### Privileged mode for pod containers
 Any container in a Pod can enable privileged mode, using the privileged flag on the security context of the container spec. This is useful for containers that want to use Linux capabilities like manipulating the network stack and accessing devices. Processes within the container get almost the same privileges that are available to processes outside a container. With privileged mode, it should be easier to write network and volume plugins as separate Pods that don’t need to be compiled into the kubelet.

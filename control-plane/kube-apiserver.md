@@ -11,3 +11,5 @@ This folder contains logs of k8s control plane like kube-api-server, etcd, kube-
 ### See default enabled admission controllers
 k logs  kube-apiserver-k8s-master -n kube-system | head -n 20
 
+### Show version of k8s cluster without authn/z
+curl -k https://MASTER_IP:6443/version

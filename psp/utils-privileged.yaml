@@ -16,7 +16,7 @@ spec:
       containers:
       - args:
         - bash
-        image: arunvelsriram/utils
+        image: prabhuj/utils
         imagePullPolicy: IfNotPresent
         name: utils-privileged
         stdin: true

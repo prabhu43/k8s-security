@@ -6,7 +6,6 @@ https://github.com/aquasecurity/kube-bench#installation
 
 - Run kube-bench using pods
 ```
-
 export KUBEBENCH_PATH="$GOPATH/src/github.com/aquasecurity/kube-bench"
 kubectl apply -f $KUBEBENCH_PATH/job.yaml
 kubectl apply -f $KUBEBENCH_PATH/job-master.yaml
